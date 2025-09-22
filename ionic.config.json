@@ -1,0 +1,7 @@
+{
+  "name": "rodrigoApp",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}
