@@ -1,11 +1,15 @@
 import { Component } from '@angular/core';
-import { IonHeader, IonToolbar, IonTitle, IonContent } from '@ionic/angular/standalone';
+// 1. IMPORTAR O ROUTERLINK
+import { RouterLink } from '@angular/router';
+import { IonicModule } from '@ionic/angular';
 
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',
   styleUrls: ['home.page.scss'],
-  imports: [IonHeader, IonToolbar, IonTitle, IonContent],
+  standalone: true,
+  // 2. ADICIONAR O ROUTERLINK AQUI
+  imports: [IonicModule, RouterLink], 
 })
 export class HomePage {
   constructor() {}
