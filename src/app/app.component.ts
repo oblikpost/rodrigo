@@ -1,12 +1,14 @@
 import { Component } from '@angular/core';
-import { IonicModule } from '@ionic/angular'; // 1. Precisa importar
+// 1. Importe os componentes standalone do Ionic
+import { IonApp, IonRouterOutlet } from '@ionic/angular/standalone';
 
 @Component({
   selector: 'app-root',
   templateUrl: 'app.component.html',
   styleUrls: ['app.component.scss'],
   standalone: true,
-  imports: [IonicModule], // 2. Precisa estar nos imports
+  // 2. Adicione os componentes importados aqui
+  imports: [IonApp, IonRouterOutlet],
 })
 export class AppComponent {
   constructor() {}

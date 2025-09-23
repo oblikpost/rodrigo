@@ -5,6 +5,9 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router'; // Para navegação
 
+// 1. Importe o ícone e a função addIcons
+import { addIcons } from 'ionicons';
+import { personOutline } from 'ionicons/icons';
 
 @Component({
   selector: 'app-login',
@@ -17,7 +20,10 @@ import { Router } from '@angular/router'; // Para navegação
 export class LoginPage {
 
   // Injetar o Router
-  constructor(private router: Router) { }
+  constructor(private router: Router) { 
+    // 2. Registre o ícone aqui
+    addIcons({ personOutline });
+  }
 
   // Função (simulada) de login
   login() {
