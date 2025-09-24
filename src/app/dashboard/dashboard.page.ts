@@ -1,19 +1,32 @@
 import { Component } from '@angular/core';
-import { IonicModule } from '@ionic/angular';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
+import { 
+  IonHeader, 
+  IonToolbar, 
+  IonTitle, 
+  IonContent, 
+  IonButton 
+} from '@ionic/angular/standalone';
 
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.page.html',
   styleUrls: ['./dashboard.page.scss'],
   standalone: true,
-  imports: [IonicModule, CommonModule, FormsModule]
+  imports: [
+    CommonModule, 
+    FormsModule,
+    IonHeader,
+    IonToolbar,
+    IonTitle,
+    IonContent,
+    IonButton
+  ]
 })
 export class DashboardPage {
-
-  // Lista de mensagens
+  // ... o restante do seu código permanece o mesmo
   private mensagens: string[] = [
     "Que bom te ver por aqui!",
     "Viva o Mundo Real!",
@@ -22,18 +35,15 @@ export class DashboardPage {
     "Que a força esteja com você."
   ];
 
-  // Variável para guardar a mensagem da vez
   public mensagemAleatoria: string = "";
 
   constructor(private router: Router) { }
 
-  // ionViewWillEnter é executado TODA vez que a página é exibida
   ionViewWillEnter() {
     this.gerarMensagemAleatoria();
   }
 
   gerarMensagemAleatoria() {
-    // Escolhe um índice aleatório da lista
     const index = Math.floor(Math.random() * this.mensagens.length);
     this.mensagemAleatoria = this.mensagens[index];
   }

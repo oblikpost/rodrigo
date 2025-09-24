@@ -1,9 +1,14 @@
 import { Component } from '@angular/core';
-import { IonicModule } from '@ionic/angular';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { Router, RouterLink } from '@angular/router'; // 👈 Adicione RouterLink aqui
-
+import { Router, RouterLink } from '@angular/router';
+import { 
+  IonContent, 
+  IonIcon, 
+  IonItem, 
+  IonInput, 
+  IonButton 
+} from '@ionic/angular/standalone';
 import { addIcons } from 'ionicons';
 import { personOutline } from 'ionicons/icons';
 
@@ -12,17 +17,20 @@ import { personOutline } from 'ionicons/icons';
   templateUrl: './cadastro.page.html',
   styleUrls: ['./cadastro.page.scss'],
   standalone: true,
-  imports: [IonicModule, CommonModule, FormsModule, RouterLink] // 👈 E adicione aqui
+  imports: [
+    CommonModule, 
+    FormsModule, 
+    RouterLink,
+    IonContent, 
+    IonIcon, 
+    IonItem, 
+    IonInput, 
+    IonButton
+  ]
 })
 export class CadastroPage {
-
   constructor(private router: Router) {
     addIcons({ personOutline });
-  }
-
-  // Esta função não é mais necessária se você usar [routerLink] no HTML
-  irParaLogin() {
-    this.router.navigateByUrl('/login');
   }
 
   cadastrar() {
